@@ -11,6 +11,16 @@ class Trait(models.Model):
         ordering = ('name',)
 
 
+class Keyword(models.Model):
+    name = models.CharField(max_length=15, unique=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        ordering = ('name',)
+
+
 class Challenge(models.Model):
     name = models.CharField(max_length=10, unique=True)
 
@@ -46,6 +56,7 @@ class Card(models.Model):
     name = models.CharField(max_length=30)
     faction = models.ForeignKey(Faction)
     traits = models.ManyToManyField(Trait, blank=True)
+    keywords = models.ManyToManyField(Keyword, blank=True)
     gold = models.IntegerField()
     str = models.IntegerField(blank=True, default=0)
     challenges = models.ManyToManyField(Challenge, blank=True)
