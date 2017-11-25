@@ -1,3 +1,9 @@
 from django.contrib import admin
+from users.models import Deck
 
-# Register your models here.
+
+class DeckAdmin(admin.ModelAdmin):
+    pass
+
+admin.site.register(Deck, DeckAdmin)
+
