@@ -38,5 +38,17 @@ class CardSerializer(serializers.ModelSerializer):
             slug_field='name'
         )
         fields = (
-            'db_id', 'name', 'set', 'type', 'faction', 'traits', 'gold', 'str', 'challenges', 'initiative', 'claim',
-            'reserve', 'image_url')
+            'db_id',
+            'name',
+            'set',
+            'type',
+            'faction',
+            'traits',
+            'gold',
+            'cost',
+            'str',
+            'challenges',
+            'initiative',
+            'claim',
+            'reserve',
+            'image_url')
