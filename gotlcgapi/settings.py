@@ -61,13 +61,11 @@ MIDDLEWARE = [
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
         'rest_framework.authentication.TokenAuthentication',
-    )
-}
-
-JWT_AUTH = {
-    'JWT_AUTH_HEADER_PREFIX': 'Bearer',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
 }
 
 ROOT_URLCONF = 'gotlcgapi.urls'
